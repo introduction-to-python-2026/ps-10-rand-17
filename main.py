@@ -74,7 +74,7 @@ def edge_detection(image_array):
   edgeX = convolve2d(grayscale_image, kernelX, mode='same', boundary='fill', fillvalue=0)
 
   # Compute edge magnitude
-  edgeMAG = np.sqrt(edgeX*2 + edgeY*2)
+  edgeMAG = np.sqrt(edgeX**2 + edgeY**2)
 
   return edgeMAG
 
@@ -178,7 +178,7 @@ def edge_detection(image_array):
   edgeX = convolve2d(grayscale_image, kernelX, mode='same', boundary='fill', fillvalue=0)
 
   # Compute edge magnitude
-  edgeMAG = np.sqrt(edgeX*2 + edgeY*2)
+  edgeMAG = np.sqrt(edgeX**2 + edgeY**2)
 
   return edgeMAG
 
@@ -235,7 +235,7 @@ def main():
     print(f"Binary edge image saved as {output_filename}")
     print("Image processing complete.")
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     main()
 
 !cat /content/image_utils.py
